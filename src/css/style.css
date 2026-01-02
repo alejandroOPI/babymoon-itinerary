@@ -396,6 +396,78 @@ main {
     color: var(--color-accent);
 }
 
+/* ===== FLIGHTS ===== */
+.flights {
+    max-width: var(--content-width);
+    margin: var(--space-lg) auto;
+    padding: var(--space-md);
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+}
+
+.flights__title {
+    font-size: var(--size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+    font-family: var(--font-body);
+    font-weight: 500;
+}
+
+.flights__list {
+    display: grid;
+    gap: var(--space-sm);
+}
+
+.flight-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xs);
+    padding: var(--space-sm);
+    background: var(--color-bg);
+    border-radius: 4px;
+}
+
+@media (min-width: 500px) {
+    .flight-card {
+        grid-template-columns: 2fr 2fr 2fr 2fr;
+        align-items: center;
+    }
+}
+
+.flight-card__route {
+    font-family: var(--font-display);
+    font-size: var(--size-lg);
+    font-weight: 500;
+}
+
+.flight-card__details {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--size-sm);
+}
+
+.flight-card__date {
+    font-weight: 500;
+}
+
+.flight-card__time {
+    color: var(--color-text-muted);
+}
+
+.flight-card__airline {
+    font-size: var(--size-sm);
+    color: var(--color-text-muted);
+}
+
+.flight-card__conf {
+    font-size: var(--size-xs);
+    color: var(--color-accent);
+    font-family: monospace;
+}
+
 /* ===== UTILITIES ===== */
 .sr-only {
     position: absolute;
