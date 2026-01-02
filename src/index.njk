@@ -1,133 +1,578 @@
 ---
 layout: base.njk
-title: Home
+title: Babymoon 2026
 ---
 
 <main>
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero">
-        <div class="hero__bg">
-            <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=1600&q=80" alt="Paris skyline">
-        </div>
-        <div class="hero__content">
-            <p class="hero__eyebrow">A Journey Through Europe</p>
-            <h1 class="hero__title">
-                <span>{{ itinerary.title }}</span>
-            </h1>
-            <p class="hero__subtitle">{{ itinerary.subtitle }}</p>
-            <p class="hero__meta">{{ itinerary.dates }} &middot; {{ itinerary.duration }}</p>
-        </div>
+        <p class="hero__eyebrow">january 5 – february 8, 2026</p>
+        <h1 class="hero__title">
+            <span>Babymoon</span>
+            <span><em>2026</em></span>
+        </h1>
+        <p class="hero__subtitle">
+            Thirty-five days. Four countries. One last great adventure before everything changes.
+        </p>
+        <figure class="hero__image drift">
+            <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&q=80" 
+                 alt="Paris at dusk" 
+                 width="800" height="533" loading="eager">
+        </figure>
+        <p class="hero__meta">Alejandro & Alejandra</p>
     </section>
 
     <!-- Table of Contents -->
-    <nav class="toc" aria-label="Destinations">
-        <h2 class="toc__title">Destinations</h2>
-        <ol class="toc__list">
-            {% for dest in itinerary.destinations %}
-            <li class="toc__item">
-                <a href="#{{ dest.id }}">{{ dest.name }}</a>
-                <span class="toc__dates">{{ dest.dates }} &middot; {{ dest.nights }} night{% if dest.nights > 1 %}s{% endif %}</span>
-            </li>
-            {% endfor %}
-        </ol>
+    <nav class="toc">
+        <h2 class="toc__title">the journey</h2>
+        <ul class="toc__list">
+            <li><a href="#paris">Paris</a> <span class="toc__dates">Jan 6–9</span></li>
+            <li><a href="#venice">Venice</a> <span class="toc__dates">Jan 9–13</span></li>
+            <li><a href="#dolomites">The Dolomites</a> <span class="toc__dates">Jan 13–17</span></li>
+            <li><a href="#milan">Milan</a> <span class="toc__dates">Jan 17–22</span></li>
+            <li><a href="#switzerland">Switzerland</a> <span class="toc__dates">Jan 23 – Feb 1</span></li>
+            <li><a href="#london">London</a> <span class="toc__dates">Feb 1–7</span></li>
+        </ul>
     </nav>
 
-    <!-- Flights Summary -->
-    <section class="flights">
-        <h2 class="flights__title">Flights</h2>
-        <div class="flights__list">
-            {% for flight in itinerary.flights %}
-            <div class="flight-card">
-                <div class="flight-card__route">{{ flight.route }}</div>
-                <div class="flight-card__details">
-                    <span class="flight-card__date">{{ flight.date }}</span>
-                    <span class="flight-card__time">{{ flight.time }}</span>
-                </div>
-                <div class="flight-card__airline">{{ flight.airline }}</div>
-                <div class="flight-card__conf">{{ flight.conf }}</div>
-            </div>
-            {% endfor %}
-        </div>
-    </section>
+    <hr class="divider">
 
-    <hr class="divider divider--wide">
-
-    <!-- Destinations -->
-    {% for dest in itinerary.destinations %}
-    <section class="destination" id="{{ dest.id }}">
-        <header class="destination__header">
-            <div class="destination__image">
-                {% if dest.id == "paris" %}
-                <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=80" alt="Eiffel Tower and Paris cityscape" loading="lazy">
-                {% elif dest.id == "venice" %}
-                <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&q=80" alt="Venice canals and gondolas" loading="lazy">
-                {% elif dest.id == "cortina" %}
-                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80" alt="Snowy Dolomites peaks at Cortina" loading="lazy">
-                {% elif dest.id == "alpedisiusi" %}
-                <img src="https://images.unsplash.com/photo-1586351012965-861624544334?w=800&q=80" alt="Alpe di Siusi meadow with mountain backdrop" loading="lazy">
-                {% elif dest.id == "milan" %}
-                <img src="https://images.unsplash.com/photo-1520440229-6469a149ac59?w=800&q=80" alt="Milan Duomo cathedral" loading="lazy">
-                {% elif dest.id == "como" %}
-                <img src="https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=800&q=80" alt="Lake Como with mountains" loading="lazy">
-                {% elif dest.id == "wengen" %}
-                <img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800&q=80" alt="Swiss Alps village with Jungfrau" loading="lazy">
-                {% elif dest.id == "lucerne" %}
-                <img src="https://images.unsplash.com/photo-1527668752968-14dc70a27c95?w=800&q=80" alt="Lucerne Chapel Bridge and lake" loading="lazy">
-                {% elif dest.id == "vals" %}
-                <img src="https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=800&q=80" alt="Thermal baths in mountains" loading="lazy">
-                {% elif dest.id == "basel" %}
-                <img src="https://images.unsplash.com/photo-1549451371-64aa98a6f660?w=800&q=80" alt="Basel Rhine river and old town" loading="lazy">
-                {% elif dest.id == "zurich" %}
-                <img src="https://images.unsplash.com/photo-1515488764276-beab7607c1e6?w=800&q=80" alt="Zurich old town and river" loading="lazy">
-                {% elif dest.id == "london" %}
-                <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80" alt="London Tower Bridge" loading="lazy">
-                {% else %}
-                <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&q=80" alt="Travel destination" loading="lazy">
-                {% endif %}
-            </div>
-            <div class="destination__info">
-                <p class="destination__country">{{ dest.country }}</p>
-                <h2 class="destination__name">{{ dest.name }}</h2>
-                <p class="destination__dates">{{ dest.dates }}</p>
-                <p class="destination__lodging"><strong>Stay:</strong> {{ dest.lodging }}</p>
-            </div>
+    <!-- Paris -->
+    <section class="chapter" id="paris">
+        <header class="chapter__header">
+            <div class="chapter__counter">part one</div>
+            <h2 class="chapter__title">
+                <span>Paris</span>
+            </h2>
+            <p class="chapter__meta">January 6–9 · 3 nights</p>
         </header>
 
-        <div class="days">
-            {% for day in dest.days %}
-            <article class="day-card">
-                <header class="day-card__header">
-                    <span class="day-card__day">{{ day.day }}</span>
-                    <span class="day-card__date">{{ day.date | replace("2026-", "") }}</span>
-                </header>
-                <h3 class="day-card__title">{{ day.title }}</h3>
-                <div class="day-card__schedule">
-                    {% if day.morning %}
-                    <p class="day-card__time"><strong>Morning:</strong> {{ day.morning }}</p>
-                    {% endif %}
-                    {% if day.afternoon %}
-                    <p class="day-card__time"><strong>Afternoon:</strong> {{ day.afternoon }}</p>
-                    {% endif %}
-                    {% if day.evening %}
-                    <p class="day-card__time"><strong>Evening:</strong> {{ day.evening }}</p>
-                    {% endif %}
-                </div>
-                {% if day.notes %}
-                <p class="day-card__notes">{{ day.notes }}</p>
-                {% endif %}
-            </article>
-            {% endfor %}
+        <figure class="chapter__image drift">
+            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=900&q=80" 
+                 alt="Eiffel Tower and Paris rooftops" 
+                 width="900" height="600" loading="lazy">
+            <figcaption>The city of light, even in January</figcaption>
+        </figure>
+
+        <div class="prose">
+            <p>We arrive in Paris in the blue hour of a January afternoon, jet-lagged and giddy, the city spreading out beneath the plane like a map of promises. The apartment is in the 9th, that perfect Parisian neighborhood that tourists rarely find—far enough from the crowds to feel like a secret, close enough to everything to feel like the center of the world.</p>
+            
+            <p>The first day is for recovery. For walking slowly through unfamiliar streets, for finding the corner café that will become ours, for remembering how to breathe in a different rhythm.</p>
+        </div>
+
+        <div class="lodging">
+            <div class="lodging__name">Airbnb</div>
+            <div class="lodging__address">2 Rue Moncey, Paris 75009</div>
+        </div>
+
+        <div class="prose prose--no-dropcap">
+            <h3>The Days</h3>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Wednesday, January 7</span>
+            </div>
+            <p>Morning at the <strong>Maison Européenne de la Photographie</strong>—three floors of images that will change how we see. Then across the river to the <strong>Orangerie</strong>, where Monet's Water Lilies wrap around us like a meditation. Walk through the Tuileries in the gray winter light, then lose ourselves in Saint-Germain for dinner.</p>
+            <p><em>Shopping: UNIQLO for basics, Lemaire for something beautiful, Merci for gifts we'll pretend are for others.</em></p>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Thursday, January 8</span>
+            </div>
+            <p>A free morning. Perhaps the Marais, perhaps nothing at all. We leave for Venice tomorrow.</p>
         </div>
     </section>
 
-    {% if not loop.last %}
+    <div class="divider--ornament"></div>
+
+    <!-- Venice -->
+    <section class="chapter" id="venice">
+        <header class="chapter__header">
+            <div class="chapter__counter">part two</div>
+            <h2 class="chapter__title">
+                <span>Venice</span>
+            </h2>
+            <p class="chapter__meta">January 9–13 · 4 nights</p>
+        </header>
+
+        <figure class="chapter__image drift">
+            <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=900&q=80" 
+                 alt="Venice Grand Canal" 
+                 width="900" height="600" loading="lazy">
+            <figcaption>La Serenissima in winter light</figcaption>
+        </figure>
+
+        <div class="prose">
+            <p>Venice in January is Venice without the crowds—a city returned to itself. The light is different in winter: softer, more forgiving, turning every canal into a mirror and every building into a watercolor. We're staying in Dorsoduro, the quietest of the central sestieri, where the Accademia and Guggenheim are neighbors and the views across to the Giudecca make evening walks feel like stepping into a Canaletto.</p>
+            
+            <p>Il Palazzo Experimental is the kind of hotel that feels like a discovery—design-forward but warm, stylish but not trying too hard. The kind of place where breakfast becomes an event and the bar becomes a ritual.</p>
+        </div>
+
+        <div class="lodging">
+            <div class="lodging__name">Il Palazzo Experimental</div>
+            <div class="lodging__address">Dorsoduro 1411, Venice</div>
+            <div class="lodging__conf">Conf#415560872</div>
+        </div>
+
+        <div class="prose prose--no-dropcap">
+            <h3>The Days</h3>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Friday, January 9</span>
+            </div>
+            <p>We land at Marco Polo just before noon. The water taxi will be extravagant and worth it—approaching Venice by water is the only proper introduction. Afternoon to settle in, perhaps a first visit to the <strong>Accademia</strong> if energy permits, then an easy dinner in the neighborhood.</p>
+            <p><em>Flight: Air France AF1426, CDG 10:00 → VCE 11:45</em></p>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Saturday, January 10</span>
+            </div>
+            <p>Art immersion day. Morning at the <strong>Gallerie dell'Accademia</strong>—Bellini, Titian, Tintoretto, Veronese, the whole Venetian pantheon. Afternoon at the <strong>Peggy Guggenheim Collection</strong>, then <strong>Punta della Dogana</strong> for the contemporary counterpoint. Evening aperitivo somewhere with a view.</p>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Sunday, January 11</span>
+            </div>
+            <p>The classics: <strong>St. Mark's Basilica</strong> (check Sunday hours), the <strong>Doge's Palace</strong>, then wandering through the Arsenale and Biennale district. Late afternoon through San Polo to Rialto, then the Line 1 vaporetto at sunset—the Grand Canal gilded and glowing.</p>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Monday, January 12</span>
+            </div>
+            <p>Islands day. <strong>Murano</strong> in the morning to watch glass being shaped by fire. <strong>Burano</strong> in the afternoon for lunch among the colored houses. Back to Venice for a farewell dinner—Osteria da Fiore if we can get in, Antiche Carampane if we can't, Alle Testiere if we're lucky.</p>
+        </div>
+    </section>
+
+    <div class="divider--ornament"></div>
+
+    <!-- Dolomites -->
+    <section class="chapter" id="dolomites">
+        <header class="chapter__header">
+            <div class="chapter__counter">part three</div>
+            <h2 class="chapter__title">
+                <span>The</span>
+                <span><em>Dolomites</em></span>
+            </h2>
+            <p class="chapter__meta">January 13–17 · 4 nights</p>
+        </header>
+
+        <figure class="chapter__image drift">
+            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=900&q=80" 
+                 alt="Snow-covered Dolomites peaks" 
+                 width="900" height="600" loading="lazy">
+            <figcaption>Where stone meets sky</figcaption>
+        </figure>
+
+        <div class="prose">
+            <p>From the canals of Venice to the peaks of the Dolomites—a journey from water to stone, from Renaissance to sublime. We're splitting this mountain time between two extraordinary places: Cortina d'Ampezzo, the glamorous queen of the Dolomites, and Alpe di Siusi, Europe's largest alpine meadow where the Sassolungo and Sciliar peaks rise like cathedrals of rock.</p>
+        </div>
+
+        <div class="callout">
+            <p class="callout__text">"The mountains are calling and I must go."</p>
+        </div>
+
+        <div class="prose prose--no-dropcap">
+            <h3>Cortina d'Ampezzo · Jan 13–15</h3>
+        </div>
+
+        <div class="lodging">
+            <div class="lodging__name">Rosapetra SPA Resort</div>
+            <div class="lodging__address">Zuel di Sopra 1, Cortina d'Ampezzo</div>
+            <div class="lodging__conf">+39 0436 869062</div>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Tuesday, January 13</span>
+            </div>
+            <p>Travel from Venice to Cortina. The train winds through the foothills, the Dolomites growing in the windows until they fill the sky. Check-in, first spa session, early dinner. The mountains will still be there tomorrow.</p>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Wednesday, January 14</span>
+            </div>
+            <p>A spa day with options. Morning in the thermal pools, afternoon for a gentle winter walk or simply reading by the fire. This is the Dolomites in rest mode—letting the landscape do the work.</p>
+        </div>
+
+        <div class="prose prose--no-dropcap">
+            <h3>Alpe di Siusi · Jan 15–17</h3>
+        </div>
+
+        <div class="lodging">
+            <div class="lodging__name">COMO Alpina Dolomites</div>
+            <div class="lodging__address">Compatsch 62/3, Castelrotto</div>
+            <div class="lodging__conf">Conf#43877SF040353</div>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Thursday, January 15</span>
+            </div>
+            <p>Transfer to Alpe di Siusi. The drive climbs through pine forests and emerges onto the plateau like entering another world. Afternoon to explore the meadow—by foot, by sled, by simply standing still and looking.</p>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Friday, January 16</span>
+            </div>
+            <p>Mountain day. Winter hiking to a <strong>rifugio</strong> for lunch—those mountain huts where they serve polenta and speck and wine that tastes better than anything in the valley. Back for spa, dinner, and the last night in the Dolomites.</p>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Saturday, January 17</span>
+            </div>
+            <p>One more spa session, then the long train to Milan. We'll arrive by evening and maybe, if we have energy, visit <strong>Pirelli HangarBicocca</strong>—that vast industrial cathedral of contemporary art, free and open late on Saturdays.</p>
+        </div>
+    </section>
+
+    <div class="divider--ornament"></div>
+
+    <!-- Milan -->
+    <section class="chapter" id="milan">
+        <header class="chapter__header">
+            <div class="chapter__counter">part four</div>
+            <h2 class="chapter__title">
+                <span>Milan</span>
+            </h2>
+            <p class="chapter__meta">January 17–22 · 5 nights</p>
+        </header>
+
+        <figure class="chapter__image drift">
+            <img src="https://images.unsplash.com/photo-1520440229-6469a149ac59?w=900&q=80" 
+                 alt="Milan Duomo" 
+                 width="900" height="600" loading="lazy">
+            <figcaption>Where design is religion</figcaption>
+        </figure>
+
+        <div class="prose">
+            <p>Milan is not a city that reveals itself easily. It lacks the obvious beauty of Rome or Florence, the romance of Venice, the glamour of the Riviera. What it has instead is something rarer: a kind of sophisticated intensity, a city where design and industry and fashion and art have fused into something uniquely Milanese.</p>
+            
+            <p>We're staying in Ticinese, the neighborhood that feels most like the Milan of the Milanese—the Navigli canals, the vintage shops, the aperitivo bars that haven't been discovered by Instagram yet.</p>
+        </div>
+
+        <div class="lodging">
+            <div class="lodging__name">Airbnb</div>
+            <div class="lodging__address">Corso di Porta Ticinese 12, Milan 20123</div>
+        </div>
+
+        <div class="prose prose--no-dropcap">
+            <h3>The Days</h3>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Sunday, January 18</span>
+            </div>
+            <p><strong>Pinacoteca di Brera</strong> in the morning—one of Italy's great collections, in a building that feels like a Renaissance palace because it was one. Then the <strong>Duomo</strong>: the roof terraces first (book tickets), then the interior. Evening in Brera for aperitivo and dinner.</p>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Monday, January 19</span>
+            </div>
+            <p>Contemporary Milan. <strong>Fondazione Prada</strong> in the morning—Rem Koolhaas's architectural masterpiece, housing Miuccia Prada's impeccable collection. Lunch at <strong>Bar Luce</strong>, Wes Anderson's candy-colored café. Afternoon wandering through Porta Nuova and the <strong>Bosco Verticale</strong>. Dinner in Isola.</p>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Tuesday, January 20</span>
+            </div>
+            <p><strong>The Last Supper.</strong> Fifteen minutes in front of Leonardo's masterpiece—booked months ago, because this is how it works. Then Corso Magenta and the design district, <strong>10 Corso Como</strong> for the shop that started it all.</p>
+            <p><em>Book months ahead: cenacolovinciano.org</em></p>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Wednesday, January 21</span>
+            </div>
+            <p>Flexible day. <strong>Castello Sforzesco</strong> if we want more art, <strong>Museo del Novecento</strong> if we want more modernism, Navigli canals if we want to just walk. Shopping in the Quadrilatero if we want to dream. Pack for Como.</p>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Thursday, January 22</span>
+            </div>
+            <p><strong>Lake Como day.</strong> Train to Varenna first (one hour, beautiful), then ferry to Bellagio for lunch, then Como town. The Brunate funicular at sunset if timing works. One night at Hotel Villa Flori—a villa on the lake.</p>
+        </div>
+
+        <div class="lodging">
+            <div class="lodging__name">Hotel Villa Flori</div>
+            <div class="lodging__address">Lake Como, one night</div>
+            <div class="lodging__conf">Conf#CY295UL56868</div>
+        </div>
+    </section>
+
+    <div class="divider--ornament"></div>
+
+    <!-- Switzerland -->
+    <section class="chapter" id="switzerland">
+        <header class="chapter__header">
+            <div class="chapter__counter">part five</div>
+            <h2 class="chapter__title">
+                <span>Switzerland</span>
+            </h2>
+            <p class="chapter__meta">January 23 – February 1 · 9 nights</p>
+        </header>
+
+        <figure class="chapter__image drift">
+            <img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=900&q=80" 
+                 alt="Swiss Alps" 
+                 width="900" height="600" loading="lazy">
+            <figcaption>The heart of the Alps</figcaption>
+        </figure>
+
+        <div class="prose">
+            <p>From Italy to Switzerland by train—one of Europe's great scenic journeys, through Lugano and Lucerne and up into the Bernese Oberland. Nine nights across five Swiss bases: the car-free village of Wengen facing the Eiger, the postcard town of Lucerne, the architectural pilgrimage of Vals, and the art cities of Basel and Zürich.</p>
+        </div>
+
+        <div class="prose prose--no-dropcap">
+            <h3>Wengen · Jan 23–26</h3>
+        </div>
+
+        <div class="lodging">
+            <div class="lodging__name">Airbnb</div>
+            <div class="lodging__address">Wengen, Bern 3823</div>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Friday, January 23</span>
+            </div>
+            <p>The journey is the destination. Como → Lugano → Lucerne → Interlaken → Wengen—five or six hours of lakes and mountains and tunnels and bridges. Arrive mid-afternoon, find our apartment, find the view.</p>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Saturday, January 24</span>
+            </div>
+            <p>Mountain day, weather permitting. <strong>Jungfraujoch</strong> is the famous one—the highest railway station in Europe. <strong>Männlichen</strong> is the alternative—easier, quieter, with hiking even in winter.</p>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Sunday, January 25</span>
+            </div>
+            <p>Buffer day. If weather was bad yesterday, this is mountain day. If good, this is recovery—Lauterbrunnen Valley for waterfalls, Mürren for another car-free village, or simply staying in Wengen with a book.</p>
+        </div>
+
+        <div class="prose prose--no-dropcap">
+            <h3>Lucerne · Jan 26–28</h3>
+        </div>
+
+        <div class="lodging">
+            <div class="lodging__name">AMERON Luzern Hotel Flora</div>
+            <div class="lodging__address">Seidenhofstrasse 5, Lucerne</div>
+            <div class="lodging__conf">Conf#HFL-141DC1-22160</div>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Monday, January 26</span>
+            </div>
+            <p>Travel from Wengen via Interlaken. Check in early afternoon, then the Old Town loop: <strong>Chapel Bridge</strong>, the squares, the lakefront, the Lion Monument if we're feeling sentimental. Lakeside dinner.</p>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Tuesday, January 27</span>
+            </div>
+            <p><strong>Mt. Rigi day.</strong> Boat from Lucerne to Vitznau—one hour of pure lake pleasure. Then the cogwheel train to Rigi Kulm, where the views stretch to infinity. Lunch on the mountain, descent via Weggis, boat back. Evening at the <strong>Rosengart Collection</strong> or just walking by the lake.</p>
+        </div>
+
+        <div class="prose prose--no-dropcap">
+            <h3>Vals · Jan 28–30</h3>
+        </div>
+
+        <figure class="chapter__image drift">
+            <img src="https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=900&q=80" 
+                 alt="Thermal baths" 
+                 width="900" height="600" loading="lazy">
+            <figcaption>Peter Zumthor's Therme Vals</figcaption>
+        </figure>
+
+        <div class="prose">
+            <p>Vals is a pilgrimage. Not for everyone, but for those who care about architecture, about thermal water, about the idea that a building can be transcendent—Vals is essential. Peter Zumthor's Therme Vals is widely considered one of the greatest buildings of the twentieth century: 60,000 slabs of local quartzite forming spaces for water, light, and silence.</p>
+        </div>
+
+        <div class="lodging">
+            <div class="lodging__name">7132 House of Architects</div>
+            <div class="lodging__address">Poststrasse 560, Vals</div>
+            <div class="lodging__conf">Conf#2025120844789028</div>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Wednesday, January 28</span>
+            </div>
+            <p>The journey to Vals. The <strong>Gotthard Panorama train</strong> from Lucerne through Andermatt and over the Oberalp Pass—sit on the right side for the Rhine Gorge. Then the PostBus from Chur through the narrow valley to Vals. Check in. First Therme session. Dinner.</p>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Thursday, January 29</span>
+            </div>
+            <p><strong>Full Therme day.</strong> Early morning in the baths before anyone else. Slow breakfast. Walk the village (it takes fifteen minutes). Second Therme session. Read. Third session in the evening. This is a day for letting time dissolve.</p>
+        </div>
+
+        <div class="prose prose--no-dropcap">
+            <h3>Basel & Zürich · Jan 30 – Feb 1</h3>
+        </div>
+
+        <div class="lodging">
+            <div class="lodging__name">Volkshaus Basel</div>
+            <div class="lodging__address">Basel</div>
+            <div class="lodging__conf">Conf#1030904407</div>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Friday, January 30</span>
+            </div>
+            <p>One more Therme session, then bus and train to Basel. Afternoon in the Altstadt: the Münster, the Marktplatz, the Rhine promenade.</p>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Saturday, January 31</span>
+            </div>
+            <p>Museum marathon. Morning at the <strong>Vitra Design Museum</strong> campus in Weil am Rhein—take the architecture tour if you can. Afternoon at <strong>Fondation Beyeler</strong>—allow at least three hours. Train to Zürich.</p>
+        </div>
+
+        <div class="lodging">
+            <div class="lodging__name">B2 Hotel Zurich</div>
+            <div class="lodging__address">Zürich</div>
+            <div class="lodging__conf">Conf#230204</div>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Sunday, February 1</span>
+            </div>
+            <p>Quick Zürich morning: <strong>Fraumünster</strong> for Chagall's stained glass windows, Old Town, maybe the lake. Then the airport. Flight to London.</p>
+            <p><em>Flight: British Airways BA719, ZRH 18:30 → LHR 19:15</em></p>
+        </div>
+    </section>
+
+    <div class="divider--ornament"></div>
+
+    <!-- London -->
+    <section class="chapter" id="london">
+        <header class="chapter__header">
+            <div class="chapter__counter">part six</div>
+            <h2 class="chapter__title">
+                <span>London</span>
+            </h2>
+            <p class="chapter__meta">February 1–7 · 6 nights</p>
+        </header>
+
+        <figure class="chapter__image drift">
+            <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=900&q=80" 
+                 alt="Tower Bridge London" 
+                 width="900" height="600" loading="lazy">
+            <figcaption>The finale</figcaption>
+        </figure>
+
+        <div class="prose">
+            <p>London is the finale—a city we know, a language we share, a chance to exhale after weeks of European intensity. The plan here is looser: great museums (free!), great food (not free), great walking, great theater if something's on.</p>
+        </div>
+
+        <div class="lodging">
+            <div class="lodging__name">Accommodation TBD</div>
+            <div class="lodging__address">London</div>
+        </div>
+
+        <div class="prose prose--no-dropcap">
+            <h3>The Days</h3>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Monday, February 2</span>
+            </div>
+            <p><strong>Tate Modern</strong> in the morning—plan three or four hours. Then walk along the river: Shakespeare's Globe, <strong>Borough Market</strong> for lunch and wandering, maybe the Southbank Centre.</p>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Tuesday, February 3</span>
+            </div>
+            <p>South Kensington day. <strong>V&A</strong> in the morning—the Cast Courts, the Fashion galleries, the jewelry. <strong>Design Museum</strong> in the afternoon.</p>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Wednesday, February 4</span>
+            </div>
+            <p><strong>British Museum</strong> in the morning—the Rosetta Stone and the Elgin Marbles and everything else. Afternoon in East London: Brick Lane, Shoreditch, the street art, the curry.</p>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Thursday, February 5</span>
+            </div>
+            <p>Shopping day. <strong>Dover Street Market</strong> for fashion-as-art. <strong>Liberty</strong> for the building and the prints. Covent Garden for the crowd-watching. Afternoon tea somewhere proper—Sketch, Claridge's, The Wolseley.</p>
+            <p><em>Book afternoon tea in advance.</em></p>
+        </div>
+
+        <div class="day">
+            <div class="day__header">
+                <span class="day__name">Friday, February 6</span>
+            </div>
+            <p>Notting Hill and farewell. <strong>Portobello Road</strong> in the morning. Final shopping, final packing, afternoon tea if we missed it. Farewell dinner somewhere meaningful—Dishoom, Hawksmoor, Bao.</p>
+            <p><em>Flight: Aeromexico AM8, LHR 22:30 → MEX (arrives Feb 7, 04:20)</em></p>
+        </div>
+    </section>
+
     <hr class="divider">
-    {% endif %}
-    {% endfor %}
+
+    <!-- Flights -->
+    <section class="flights">
+        <h2 class="flights__title">flights</h2>
+        
+        <div class="flight">
+            <div class="flight__route">MEX → CDG</div>
+            <div class="flight__date">Jan 5, 22:30</div>
+            <div class="flight__details">Aeromexico AM3</div>
+            <div class="flight__conf">MHFFDR / KDRMHR</div>
+        </div>
+        
+        <div class="flight">
+            <div class="flight__route">CDG → VCE</div>
+            <div class="flight__date">Jan 9, 10:00</div>
+            <div class="flight__details">Air France AF1426</div>
+            <div class="flight__conf">YGOPF2</div>
+        </div>
+        
+        <div class="flight">
+            <div class="flight__route">ZRH → LHR</div>
+            <div class="flight__date">Feb 1, 18:30</div>
+            <div class="flight__details">British Airways BA719</div>
+            <div class="flight__conf">YYBCS2</div>
+        </div>
+        
+        <div class="flight">
+            <div class="flight__route">LHR → MEX</div>
+            <div class="flight__date">Feb 6, 22:30</div>
+            <div class="flight__details">Aeromexico AM8</div>
+            <div class="flight__conf">MHFFDR / KDRMHR</div>
+        </div>
+    </section>
+
+    <hr class="divider">
 
     <!-- Footer -->
     <footer class="footer">
-        <p>Made with love for our babymoon adventure</p>
-        <p>Alejandro & Alejandra, 2026</p>
+        <p><em>Thirty-five days. Four countries.</em></p>
+        <p><em>One last great adventure before everything changes.</em></p>
+        <p>Alejandro & Alejandra · 2026</p>
     </footer>
 </main>

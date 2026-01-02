@@ -1,7 +1,7 @@
 /* ===== CUSTOM PROPERTIES ===== */
 :root {
     --font-display: 'Cormorant Garamond', Georgia, serif;
-    --font-body: 'Inter', -apple-system, sans-serif;
+    --font-body: 'Source Serif 4', Georgia, serif;
     
     --size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
     --size-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
@@ -9,55 +9,45 @@
     --size-lg: clamp(1.25rem, 1rem + 1.25vw, 1.75rem);
     --size-xl: clamp(1.75rem, 1.25rem + 2.5vw, 3rem);
     --size-2xl: clamp(2.5rem, 1.5rem + 5vw, 5rem);
-    --size-3xl: clamp(3.5rem, 2rem + 7.5vw, 7rem);
+    --size-3xl: clamp(3.5rem, 2rem + 7.5vw, 8rem);
     
-    --color-bg: #faf9f7;
-    --color-text: #1a1a1a;
-    --color-text-muted: #666;
-    --color-accent: #c4a77d;
-    --color-divider: #e5e2dc;
+    --color-bg: #faf9f6;
+    --color-text: #2a2722;
+    --color-text-muted: #5a5651;
+    --color-accent: #8b6914;
+    --color-divider: #d4d0c8;
     
     --space-xs: 0.5rem;
     --space-sm: 1rem;
     --space-md: 2rem;
     --space-lg: 4rem;
     --space-xl: 8rem;
+    --space-2xl: 12rem;
     
     --content-width: 65ch;
     --wide-width: 90ch;
 }
 
 /* ===== RESET ===== */
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
-* {
-    margin: 0;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-}
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+img { display: block; max-width: 100%; }
 
 /* ===== BASE ===== */
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
     font-family: var(--font-body);
     font-size: var(--size-base);
-    line-height: 1.7;
+    line-height: 1.75;
     color: var(--color-text);
     background: var(--color-bg);
 }
 
 /* ===== TYPOGRAPHY ===== */
-h1, h2, h3, h4 {
+h1, h2, h3 {
     font-family: var(--font-display);
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.15;
     text-wrap: balance;
 }
@@ -65,7 +55,8 @@ h1, h2, h3, h4 {
 h1 { font-size: var(--size-3xl); }
 h2 { font-size: var(--size-2xl); }
 h3 { font-size: var(--size-xl); }
-h4 { font-size: var(--size-lg); }
+
+h1 span, h2 span { display: block; }
 
 em {
     font-style: italic;
@@ -74,6 +65,11 @@ em {
 
 a {
     color: inherit;
+    text-decoration-color: var(--color-divider);
+    text-underline-offset: 0.2em;
+}
+
+a:hover {
     text-decoration-color: var(--color-accent);
 }
 
@@ -82,11 +78,6 @@ main {
     max-width: var(--wide-width);
     margin: 0 auto;
     padding: var(--space-md);
-}
-
-.prose {
-    max-width: var(--content-width);
-    margin: var(--space-lg) auto;
 }
 
 /* ===== HERO ===== */
@@ -98,107 +89,81 @@ main {
     align-items: center;
     text-align: center;
     padding: var(--space-xl) var(--space-md);
-    position: relative;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 0%, var(--color-bg) 100%);
-    z-index: 1;
-}
-
-.hero__bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-}
-
-.hero__bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.25;
-}
-
-.hero__content {
-    position: relative;
-    z-index: 2;
 }
 
 .hero__eyebrow {
     font-size: var(--size-xs);
-    text-transform: uppercase;
+    text-transform: lowercase;
     letter-spacing: 0.2em;
     color: var(--color-text-muted);
     margin-bottom: var(--space-sm);
 }
 
 .hero__title {
-    margin-bottom: var(--space-sm);
-}
-
-.hero__title span {
-    display: block;
+    margin-bottom: var(--space-md);
 }
 
 .hero__subtitle {
+    max-width: 50ch;
     font-family: var(--font-display);
     font-size: var(--size-lg);
     font-style: italic;
     color: var(--color-text-muted);
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.hero__image {
+    max-width: 500px;
+    margin: var(--space-lg) auto;
+}
+
+.hero__image img {
+    width: 100%;
+    height: auto;
 }
 
 .hero__meta {
-    font-size: var(--size-sm);
+    font-size: var(--size-xs);
     color: var(--color-text-muted);
+    letter-spacing: 0.05em;
 }
 
 /* ===== TABLE OF CONTENTS ===== */
 .toc {
     max-width: var(--content-width);
     margin: var(--space-xl) auto;
-    padding: var(--space-lg);
-    background: white;
-    border-radius: 4px;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
 }
 
 .toc__title {
     font-size: var(--size-sm);
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
+    text-transform: lowercase;
+    letter-spacing: 0.1em;
     color: var(--color-text-muted);
     margin-bottom: var(--space-md);
     font-family: var(--font-body);
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .toc__list {
     list-style: none;
     padding: 0;
-    display: grid;
-    gap: var(--space-sm);
 }
 
-.toc__item {
+.toc__list li {
+    padding: var(--space-xs) 0;
+    border-bottom: 1px solid var(--color-divider);
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding-bottom: var(--space-xs);
-    border-bottom: 1px solid var(--color-divider);
 }
 
-.toc__item a {
-    text-decoration: none;
+.toc__list a {
     font-family: var(--font-display);
     font-size: var(--size-lg);
+    text-decoration: none;
 }
 
-.toc__item a:hover {
+.toc__list a:hover {
     color: var(--color-accent);
 }
 
@@ -207,181 +172,265 @@ main {
     color: var(--color-text-muted);
 }
 
-/* ===== DIVIDER ===== */
+/* ===== DIVIDERS ===== */
 .divider {
     border: none;
-    height: 1px;
-    background: var(--color-divider);
+    border-top: 1px solid var(--color-divider);
     margin: var(--space-xl) auto;
     max-width: var(--content-width);
 }
 
-.divider--wide {
-    max-width: var(--wide-width);
+.divider--ornament {
+    text-align: center;
+    margin: var(--space-xl) auto;
+    max-width: var(--content-width);
 }
 
-/* ===== DESTINATION SECTION ===== */
-.destination {
-    margin: var(--space-xl) 0;
+.divider--ornament::before {
+    content: '~';
+    color: var(--color-divider);
+    font-size: var(--size-xl);
+}
+
+/* ===== CHAPTERS ===== */
+.chapter {
+    margin: var(--space-2xl) 0;
     scroll-margin-top: var(--space-md);
 }
 
-.destination__header {
-    display: grid;
-    gap: var(--space-lg);
+.chapter__header {
+    text-align: center;
     margin-bottom: var(--space-lg);
 }
 
-@media (min-width: 768px) {
-    .destination__header {
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-    }
-    
-    .destination:nth-child(even) .destination__header {
-        direction: rtl;
-    }
-    
-    .destination:nth-child(even) .destination__header > * {
-        direction: ltr;
-    }
-}
-
-.destination__image {
-    aspect-ratio: 4/3;
-    overflow: hidden;
-    border-radius: 4px;
-}
-
-.destination__image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-}
-
-.destination__image:hover img {
-    transform: scale(1.03);
-}
-
-.destination__info {
-    padding: var(--space-md) 0;
-}
-
-.destination__country {
+.chapter__counter {
     font-size: var(--size-xs);
-    text-transform: uppercase;
+    text-transform: lowercase;
     letter-spacing: 0.15em;
     color: var(--color-text-muted);
-    margin-bottom: var(--space-xs);
-}
-
-.destination__name {
     margin-bottom: var(--space-sm);
 }
 
-.destination__dates {
+.chapter__title {
+    margin-bottom: var(--space-sm);
+}
+
+.chapter__meta {
     font-family: var(--font-display);
     font-size: var(--size-lg);
     font-style: italic;
     color: var(--color-text-muted);
-    margin-bottom: var(--space-sm);
 }
 
-.destination__lodging {
-    font-size: var(--size-sm);
+/* ===== FIGURES ===== */
+figure {
+    margin: var(--space-lg) 0;
+}
+
+.chapter__image {
+    max-width: 700px;
+    margin: var(--space-lg) auto;
+}
+
+.chapter__image img {
+    width: 100%;
+    height: auto;
+}
+
+figcaption {
+    font-size: var(--size-xs);
     color: var(--color-text-muted);
+    margin-top: var(--space-xs);
+    text-align: center;
+    font-style: italic;
 }
 
-.destination__lodging strong {
+/* Drift hover effect */
+.drift {
+    overflow: hidden;
+}
+
+.drift img {
+    transition: transform 0.6s ease-out;
+}
+
+.drift:hover img {
+    transform: scale(1.02);
+}
+
+/* ===== PROSE ===== */
+.prose {
+    max-width: var(--content-width);
+    margin: var(--space-lg) auto;
+}
+
+.prose p {
+    margin-bottom: 1.5em;
+}
+
+.prose p:first-child::first-letter {
+    font-family: var(--font-display);
+    font-size: 3.5em;
+    float: left;
+    line-height: 0.8;
+    padding-right: 0.1em;
+    padding-top: 0.1em;
     color: var(--color-text);
 }
 
-/* ===== DAY CARDS ===== */
-.days {
-    display: grid;
-    gap: var(--space-md);
-    max-width: var(--wide-width);
-    margin: 0 auto;
+.prose--no-dropcap p:first-child::first-letter {
+    font-size: inherit;
+    float: none;
+    line-height: inherit;
+    padding: 0;
 }
 
-@media (min-width: 600px) {
-    .days {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.prose h3 {
+    font-size: var(--size-lg);
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
 }
 
-@media (min-width: 900px) {
-    .days {
-        grid-template-columns: repeat(3, 1fr);
-    }
+.prose ul, .prose ol {
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
 }
 
-.day-card {
-    background: white;
+.prose li {
+    margin-bottom: 0.5em;
+}
+
+/* ===== CALLOUTS ===== */
+.callout {
+    background: linear-gradient(135deg, var(--color-bg), #f0ede6);
+    padding: var(--space-lg);
+    margin: var(--space-xl) 0;
+    text-align: center;
+    max-width: var(--content-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.callout__text {
+    font-family: var(--font-display);
+    font-size: var(--size-lg);
+    font-style: italic;
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+/* ===== DAY DETAILS ===== */
+.day {
+    margin: var(--space-md) 0;
     padding: var(--space-md);
-    border-radius: 4px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-    transition: box-shadow 0.3s ease;
+    background: white;
+    border-left: 3px solid var(--color-divider);
 }
 
-.day-card:hover {
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-}
-
-.day-card__header {
+.day__header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: var(--space-sm);
-    padding-bottom: var(--space-xs);
-    border-bottom: 1px solid var(--color-divider);
 }
 
-.day-card__day {
-    font-size: var(--size-xs);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-text-muted);
-}
-
-.day-card__date {
-    font-family: var(--font-display);
-    font-size: var(--size-sm);
-    color: var(--color-text-muted);
-}
-
-.day-card__title {
+.day__name {
     font-family: var(--font-display);
     font-size: var(--size-lg);
-    margin-bottom: var(--space-sm);
+    font-weight: 500;
 }
 
-.day-card__schedule {
+.day__date {
     font-size: var(--size-sm);
-    line-height: 1.6;
+    color: var(--color-text-muted);
 }
 
-.day-card__time {
-    display: block;
+.day p {
+    margin-bottom: 0.75em;
+    font-size: var(--size-sm);
+}
+
+.day p:last-child {
+    margin-bottom: 0;
+}
+
+.day em {
+    font-family: var(--font-body);
+    color: var(--color-text-muted);
+}
+
+/* ===== LODGING ===== */
+.lodging {
+    background: white;
+    padding: var(--space-md);
+    margin: var(--space-md) 0;
+    border: 1px solid var(--color-divider);
+}
+
+.lodging__name {
+    font-family: var(--font-display);
+    font-size: var(--size-lg);
     margin-bottom: var(--space-xs);
 }
 
-.day-card__time strong {
-    color: var(--color-accent);
-    font-weight: 500;
-    text-transform: uppercase;
-    font-size: var(--size-xs);
-    letter-spacing: 0.05em;
+.lodging__address {
+    font-size: var(--size-sm);
+    color: var(--color-text-muted);
 }
 
-.day-card__notes {
-    margin-top: var(--space-sm);
-    padding-top: var(--space-sm);
-    border-top: 1px dashed var(--color-divider);
+.lodging__conf {
     font-size: var(--size-xs);
+    color: var(--color-accent);
+    font-family: monospace;
+    margin-top: var(--space-xs);
+}
+
+/* ===== FLIGHTS ===== */
+.flights {
+    max-width: var(--content-width);
+    margin: var(--space-xl) auto;
+}
+
+.flights__title {
+    font-size: var(--size-sm);
+    text-transform: lowercase;
+    letter-spacing: 0.1em;
     color: var(--color-text-muted);
-    font-style: italic;
+    margin-bottom: var(--space-md);
+}
+
+.flight {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--color-divider);
+}
+
+@media (min-width: 500px) {
+    .flight {
+        grid-template-columns: 2fr 2fr 2fr 2fr;
+    }
+}
+
+.flight__route {
+    font-family: var(--font-display);
+    font-size: var(--size-lg);
+}
+
+.flight__date {
+    font-size: var(--size-sm);
+}
+
+.flight__details {
+    font-size: var(--size-sm);
+    color: var(--color-text-muted);
+}
+
+.flight__conf {
+    font-size: var(--size-xs);
+    color: var(--color-accent);
+    font-family: monospace;
 }
 
 /* ===== FOOTER ===== */
@@ -392,91 +441,6 @@ main {
     font-size: var(--size-sm);
 }
 
-.footer__heart {
-    color: var(--color-accent);
-}
-
-/* ===== FLIGHTS ===== */
-.flights {
-    max-width: var(--content-width);
-    margin: var(--space-lg) auto;
-    padding: var(--space-md);
-    background: white;
-    border-radius: 4px;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
-}
-
-.flights__title {
-    font-size: var(--size-sm);
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--color-text-muted);
-    margin-bottom: var(--space-md);
-    font-family: var(--font-body);
-    font-weight: 500;
-}
-
-.flights__list {
-    display: grid;
-    gap: var(--space-sm);
-}
-
-.flight-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-xs);
-    padding: var(--space-sm);
-    background: var(--color-bg);
-    border-radius: 4px;
-}
-
-@media (min-width: 500px) {
-    .flight-card {
-        grid-template-columns: 2fr 2fr 2fr 2fr;
-        align-items: center;
-    }
-}
-
-.flight-card__route {
-    font-family: var(--font-display);
-    font-size: var(--size-lg);
-    font-weight: 500;
-}
-
-.flight-card__details {
-    display: flex;
-    flex-direction: column;
-    font-size: var(--size-sm);
-}
-
-.flight-card__date {
-    font-weight: 500;
-}
-
-.flight-card__time {
-    color: var(--color-text-muted);
-}
-
-.flight-card__airline {
-    font-size: var(--size-sm);
-    color: var(--color-text-muted);
-}
-
-.flight-card__conf {
-    font-size: var(--size-xs);
-    color: var(--color-accent);
-    font-family: monospace;
-}
-
-/* ===== UTILITIES ===== */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+.footer p {
+    margin-bottom: var(--space-xs);
 }
