@@ -1,0 +1,6 @@
+{
+  "framework": "eleventy",
+  "buildCommand": "pnpm build",
+  "outputDirectory": "_site",
+  "public": true
+}
