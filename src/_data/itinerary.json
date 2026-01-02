@@ -1,0 +1,404 @@
+{
+  "title": "Babymoon 2026",
+  "subtitle": "Mexico City to Europe and Back",
+  "dates": "January 5 – February 8, 2026",
+  "duration": "35 days",
+  "destinations": [
+    {
+      "id": "paris",
+      "name": "Paris",
+      "country": "France",
+      "dates": "Jan 6–8",
+      "nights": 3,
+      "lodging": "Airbnb — 2 Rue Moncey",
+      "image": "paris.jpg",
+      "days": [
+        {
+          "date": "2026-01-06",
+          "day": "Tuesday",
+          "title": "Arrival Day",
+          "morning": "Flight arrival at CDG ~4pm",
+          "afternoon": "Check-in + rest + light neighborhood exploration",
+          "evening": "Easy walk + dinner",
+          "notes": "Low-key recovery day"
+        },
+        {
+          "date": "2026-01-07",
+          "day": "Wednesday",
+          "title": "Museums & Shopping",
+          "morning": "MEP (Maison Européenne de la Photographie) — ~3h",
+          "afternoon": "Musée de l'Orangerie (Monet Water Lilies) + Tuileries Garden",
+          "evening": "Saint-Germain dinner",
+          "notes": "Shopping: UNIQLO, Lemaire, Merci"
+        },
+        {
+          "date": "2026-01-08",
+          "day": "Thursday",
+          "title": "Departure to Venice",
+          "morning": "Free morning",
+          "afternoon": "Travel prep",
+          "evening": "Flight to Venice",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "id": "venice",
+      "name": "Venice",
+      "country": "Italy",
+      "dates": "Jan 9–12",
+      "nights": 4,
+      "lodging": "Il Palazzo Experimental",
+      "image": "venice.jpg",
+      "days": [
+        {
+          "date": "2026-01-09",
+          "day": "Friday",
+          "title": "Arrival & Dorsoduro",
+          "morning": "Arrival + settle in",
+          "afternoon": "Gallerie dell'Accademia (if energy) + Dorsoduro walk",
+          "evening": "Easy dinner / early night",
+          "notes": "Accademia closed Mon"
+        },
+        {
+          "date": "2026-01-10",
+          "day": "Saturday",
+          "title": "Art Immersion",
+          "morning": "Gallerie dell'Accademia (Venetian masters)",
+          "afternoon": "Peggy Guggenheim Collection + Punta della Dogana",
+          "evening": "Aperitivo + dinner",
+          "notes": "All walking distance in Dorsoduro"
+        },
+        {
+          "date": "2026-01-11",
+          "day": "Sunday",
+          "title": "Classic Venice",
+          "morning": "St. Mark's Basilica + Doge's Palace",
+          "afternoon": "Arsenale/Biennale district + San Polo/Rialto",
+          "evening": "Grand Canal vaporetto sunset ride (Line 1)",
+          "notes": "Book combo ticket online for Doge's Palace"
+        },
+        {
+          "date": "2026-01-12",
+          "day": "Monday",
+          "title": "Islands Day",
+          "morning": "Murano (glass workshops/demos)",
+          "afternoon": "Burano (colorful houses + lunch)",
+          "evening": "Farewell Venice dinner",
+          "notes": "Dinner ideas: Osteria da Fiore, Antiche Carampane, Alle Testiere"
+        }
+      ]
+    },
+    {
+      "id": "dolomites",
+      "name": "Dolomites",
+      "country": "Italy",
+      "dates": "Jan 13–17",
+      "nights": 4,
+      "lodging": "TBD — Mountain spa/hotel",
+      "image": "dolomites.jpg",
+      "days": [
+        {
+          "date": "2026-01-13",
+          "day": "Tuesday",
+          "title": "Arrival",
+          "morning": "Train from Venice",
+          "afternoon": "Arrival + check-in",
+          "evening": "Settle in, first spa session",
+          "notes": ""
+        },
+        {
+          "date": "2026-01-14",
+          "day": "Wednesday",
+          "title": "Spa & Mountains",
+          "morning": "Spa/wellness",
+          "afternoon": "Light winter activity or rest",
+          "evening": "Dinner at hotel",
+          "notes": ""
+        },
+        {
+          "date": "2026-01-15",
+          "day": "Thursday",
+          "title": "Mountain Day",
+          "morning": "Winter hiking or skiing",
+          "afternoon": "Continue activity",
+          "evening": "Spa + dinner",
+          "notes": ""
+        },
+        {
+          "date": "2026-01-16",
+          "day": "Friday",
+          "title": "Relaxation",
+          "morning": "Spa session",
+          "afternoon": "Rest/read/explore village",
+          "evening": "Final Dolomites dinner",
+          "notes": ""
+        },
+        {
+          "date": "2026-01-17",
+          "day": "Saturday",
+          "title": "Departure to Milan",
+          "morning": "Final spa session + check-out (~12pm)",
+          "afternoon": "Train to Milan (4–5h via Verona/Bolzano)",
+          "evening": "Pirelli HangarBicocca (open late Sat; free)",
+          "notes": "Arrive Milan ~6–7pm"
+        }
+      ]
+    },
+    {
+      "id": "milan",
+      "name": "Milan",
+      "country": "Italy",
+      "dates": "Jan 17–22",
+      "nights": 5,
+      "lodging": "Airbnb — Corso di Porta Ticinese, 12",
+      "image": "milan.jpg",
+      "days": [
+        {
+          "date": "2026-01-18",
+          "day": "Sunday",
+          "title": "Classical Art & Duomo",
+          "morning": "Pinacoteca di Brera (2–3h)",
+          "afternoon": "Duomo + rooftop terraces + design district stroll",
+          "evening": "Brera aperitivo + dinner",
+          "notes": "Book Duomo rooftop tickets online"
+        },
+        {
+          "date": "2026-01-19",
+          "day": "Monday",
+          "title": "Contemporary Art",
+          "morning": "Fondazione Prada (3–4h) + Bar Luce",
+          "afternoon": "Bosco Verticale + Porta Nuova / Gae Aulenti",
+          "evening": "Isola neighborhood dinner",
+          "notes": ""
+        },
+        {
+          "date": "2026-01-20",
+          "day": "Tuesday",
+          "title": "The Last Supper",
+          "morning": "The Last Supper (Santa Maria delle Grazie)",
+          "afternoon": "Corso Magenta + design district / 10 Corso Como",
+          "evening": "Dinner",
+          "notes": "MUST book Last Supper months ahead — 15 min timed slot"
+        },
+        {
+          "date": "2026-01-21",
+          "day": "Wednesday",
+          "title": "Flexible Day",
+          "morning": "Castello Sforzesco + Parco Sempione OR Museo del Novecento",
+          "afternoon": "Navigli canals OR shopping (Quadrilatero)",
+          "evening": "Pack for Como; relaxed dinner",
+          "notes": "Best catch-up day (no fixed tickets)"
+        },
+        {
+          "date": "2026-01-22",
+          "day": "Thursday",
+          "title": "Lake Como Day Trip",
+          "morning": "Train to Varenna + promenade (10am–12pm)",
+          "afternoon": "Ferry to Bellagio (lunch + shopping) → Como",
+          "evening": "Brunate funicular (sunset) + lakeside dinner",
+          "notes": "Scenic logistics day—keep schedule loose"
+        }
+      ]
+    },
+    {
+      "id": "wengen",
+      "name": "Wengen",
+      "country": "Switzerland",
+      "dates": "Jan 23–25",
+      "nights": 3,
+      "lodging": "Airbnb — Wengen, Bern 3823",
+      "image": "wengen.jpg",
+      "days": [
+        {
+          "date": "2026-01-23",
+          "day": "Friday",
+          "title": "Scenic Train Day",
+          "morning": "Depart Como ~9am",
+          "afternoon": "Train Como → Lugano → Luzern → Interlaken → Wengen (5–6h)",
+          "evening": "Village exploration + Jungfrau/Eiger views from balcony",
+          "notes": "Car-free village; arrive ~2–3pm"
+        },
+        {
+          "date": "2026-01-24",
+          "day": "Saturday",
+          "title": "Mountain Day",
+          "morning": "Check weather — Jungfraujoch OR Männlichen",
+          "afternoon": "Continue mountain excursion",
+          "evening": "Dinner + rest",
+          "notes": "Only do mountains if clear weather"
+        },
+        {
+          "date": "2026-01-25",
+          "day": "Sunday",
+          "title": "Buffer Day",
+          "morning": "Weather backup for mountains OR Lauterbrunnen waterfalls",
+          "afternoon": "Mürren / spa / rest",
+          "evening": "Pack for Lucerne",
+          "notes": "Recovery day if needed"
+        }
+      ]
+    },
+    {
+      "id": "lucerne",
+      "name": "Lucerne",
+      "country": "Switzerland",
+      "dates": "Jan 26–27",
+      "nights": 2,
+      "lodging": "Hotel near Old Town",
+      "image": "lucerne.jpg",
+      "days": [
+        {
+          "date": "2026-01-26",
+          "day": "Monday",
+          "title": "Arrival & Old Town",
+          "morning": "Train via Interlaken (2.5–3h)",
+          "afternoon": "Old Town loop: Chapel Bridge + squares + lakefront",
+          "evening": "Lakeside dinner",
+          "notes": "Keep it gentle after travel"
+        },
+        {
+          "date": "2026-01-27",
+          "day": "Tuesday",
+          "title": "Mt. Rigi Day",
+          "morning": "Boat Lucerne → Vitznau (1h) + cogwheel train to Mt. Rigi",
+          "afternoon": "Rigi Kulm views + lunch; descend via Weggis",
+          "evening": "Rosengart Collection / evening stroll",
+          "notes": "Classic Switzerland day; weather-dependent"
+        }
+      ]
+    },
+    {
+      "id": "vals",
+      "name": "Vals",
+      "country": "Switzerland",
+      "dates": "Jan 28–30",
+      "nights": 2,
+      "lodging": "7132 Hotel",
+      "image": "vals.jpg",
+      "days": [
+        {
+          "date": "2026-01-28",
+          "day": "Wednesday",
+          "title": "Scenic Journey to Vals",
+          "morning": "Gotthard Panorama train: Lucerne → Andermatt → Chur",
+          "afternoon": "PostBus Chur → Vals; check-in",
+          "evening": "First Therme session at 7132",
+          "notes": "Sit right side for best Rhine Gorge views"
+        },
+        {
+          "date": "2026-01-29",
+          "day": "Thursday",
+          "title": "Full Therme Day",
+          "morning": "Early Therme session (quietest) + slow breakfast",
+          "afternoon": "Rest/read/walk village; second Therme session",
+          "evening": "Evening Therme + dinner",
+          "notes": "Peter Zumthor architecture; skip hot/cold extremes if needed"
+        },
+        {
+          "date": "2026-01-30",
+          "day": "Friday",
+          "title": "Departure to Basel",
+          "morning": "Optional final Therme session",
+          "afternoon": "Bus to Chur + train to Basel (~3.5h)",
+          "evening": "Basel Altstadt: Münster + Marktplatz + Rhine promenade",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "id": "zurich",
+      "name": "Basel & Zürich",
+      "country": "Switzerland",
+      "dates": "Jan 30 – Feb 1",
+      "nights": 2,
+      "lodging": "Basel: Volkshaus / Zürich: Near lake",
+      "image": "zurich.jpg",
+      "days": [
+        {
+          "date": "2026-01-31",
+          "day": "Saturday",
+          "title": "Museum Day",
+          "morning": "Vitra Design Museum campus (Weil am Rhein)",
+          "afternoon": "Fondation Beyeler (3+ hours)",
+          "evening": "Train to Zürich; simple dinner",
+          "notes": "Long museum day; book Vitra architecture tour online"
+        },
+        {
+          "date": "2026-02-01",
+          "day": "Sunday",
+          "title": "Zürich & Flight to London",
+          "morning": "Fraumünster (Chagall windows) + Old Town/lake OR Kunsthaus",
+          "afternoon": "Flight ZRH → LHR",
+          "evening": "Transfer to London accommodation; light dinner",
+          "notes": "Keep Zürich plan short to avoid rushing"
+        }
+      ]
+    },
+    {
+      "id": "london",
+      "name": "London",
+      "country": "United Kingdom",
+      "dates": "Feb 1–7",
+      "nights": 6,
+      "lodging": "TBD",
+      "image": "london.jpg",
+      "days": [
+        {
+          "date": "2026-02-02",
+          "day": "Monday",
+          "title": "South Bank",
+          "morning": "Tate Modern (free) — 3–4h",
+          "afternoon": "South Bank walk + Shakespeare's Globe + Borough Market",
+          "evening": "Dinner / easy night",
+          "notes": ""
+        },
+        {
+          "date": "2026-02-03",
+          "day": "Tuesday",
+          "title": "South Kensington",
+          "morning": "V&A Museum (free) — 3–4h",
+          "afternoon": "Design Museum — ~2h",
+          "evening": "Dinner",
+          "notes": "Cast Courts, Fashion, Jewelry at V&A"
+        },
+        {
+          "date": "2026-02-04",
+          "day": "Wednesday",
+          "title": "British Museum & East London",
+          "morning": "British Museum (free) — 3–4h",
+          "afternoon": "East London: Brick Lane / Shoreditch",
+          "evening": "Dinner",
+          "notes": ""
+        },
+        {
+          "date": "2026-02-05",
+          "day": "Thursday",
+          "title": "Shopping Day",
+          "morning": "Dover Street Market, Liberty, Covent Garden",
+          "afternoon": "Museums you missed / light exploring",
+          "evening": "Dinner",
+          "notes": "Book afternoon tea ahead: Sketch / Claridge's / Wolseley"
+        },
+        {
+          "date": "2026-02-06",
+          "day": "Friday",
+          "title": "Notting Hill & Farewell",
+          "morning": "Notting Hill / Portobello Road",
+          "afternoon": "Final shopping + packing; afternoon tea",
+          "evening": "Farewell dinner",
+          "notes": "Dinner: Dishoom / Hawksmoor / The Ivy / Bao — book ahead"
+        },
+        {
+          "date": "2026-02-07",
+          "day": "Saturday",
+          "title": "Departure",
+          "morning": "Portobello Road Market OR slow breakfast",
+          "afternoon": "Airport transfer",
+          "evening": "Overnight flight to Mexico City",
+          "notes": "Leave extra buffer for airport"
+        }
+      ]
+    }
+  ]
+}

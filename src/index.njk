@@ -1,0 +1,109 @@
+---
+layout: base.njk
+title: Home
+---
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero__bg">
+            <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=1600&q=80" alt="Paris skyline">
+        </div>
+        <div class="hero__content">
+            <p class="hero__eyebrow">A Journey Through Europe</p>
+            <h1 class="hero__title">
+                <span>{{ itinerary.title }}</span>
+            </h1>
+            <p class="hero__subtitle">{{ itinerary.subtitle }}</p>
+            <p class="hero__meta">{{ itinerary.dates }} · {{ itinerary.duration }}</p>
+        </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <nav class="toc" aria-label="Destinations">
+        <h2 class="toc__title">Destinations</h2>
+        <ol class="toc__list">
+            {% for dest in itinerary.destinations %}
+            <li class="toc__item">
+                <a href="#{{ dest.id }}">{{ dest.name }}</a>
+                <span class="toc__dates">{{ dest.dates }} · {{ dest.nights }} nights</span>
+            </li>
+            {% endfor %}
+        </ol>
+    </nav>
+
+    <hr class="divider divider--wide">
+
+    <!-- Destinations -->
+    {% for dest in itinerary.destinations %}
+    <section class="destination" id="{{ dest.id }}">
+        <header class="destination__header">
+            <div class="destination__image">
+                {% if dest.id == "paris" %}
+                <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=80" alt="Eiffel Tower and Paris cityscape" loading="lazy">
+                {% elif dest.id == "venice" %}
+                <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&q=80" alt="Venice canals and gondolas" loading="lazy">
+                {% elif dest.id == "dolomites" %}
+                <img src="https://images.unsplash.com/photo-1586351012965-861624544334?w=800&q=80" alt="Dolomites mountain peaks" loading="lazy">
+                {% elif dest.id == "milan" %}
+                <img src="https://images.unsplash.com/photo-1520440229-6469a149ac59?w=800&q=80" alt="Milan Duomo cathedral" loading="lazy">
+                {% elif dest.id == "wengen" %}
+                <img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800&q=80" alt="Swiss Alps and mountain village" loading="lazy">
+                {% elif dest.id == "lucerne" %}
+                <img src="https://images.unsplash.com/photo-1527668752968-14dc70a27c95?w=800&q=80" alt="Lucerne Chapel Bridge and lake" loading="lazy">
+                {% elif dest.id == "vals" %}
+                <img src="https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=800&q=80" alt="Thermal baths in mountains" loading="lazy">
+                {% elif dest.id == "zurich" %}
+                <img src="https://images.unsplash.com/photo-1515488764276-beab7607c1e6?w=800&q=80" alt="Zurich old town and river" loading="lazy">
+                {% elif dest.id == "london" %}
+                <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80" alt="London Tower Bridge" loading="lazy">
+                {% else %}
+                <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&q=80" alt="Travel destination" loading="lazy">
+                {% endif %}
+            </div>
+            <div class="destination__info">
+                <p class="destination__country">{{ dest.country }}</p>
+                <h2 class="destination__name">{{ dest.name }}</h2>
+                <p class="destination__dates">{{ dest.dates }}</p>
+                <p class="destination__lodging"><strong>Stay:</strong> {{ dest.lodging }}</p>
+            </div>
+        </header>
+
+        <div class="days">
+            {% for day in dest.days %}
+            <article class="day-card">
+                <header class="day-card__header">
+                    <span class="day-card__day">{{ day.day }}</span>
+                    <span class="day-card__date">{{ day.date | replace("2026-", "") }}</span>
+                </header>
+                <h3 class="day-card__title">{{ day.title }}</h3>
+                <div class="day-card__schedule">
+                    {% if day.morning %}
+                    <p class="day-card__time"><strong>Morning:</strong> {{ day.morning }}</p>
+                    {% endif %}
+                    {% if day.afternoon %}
+                    <p class="day-card__time"><strong>Afternoon:</strong> {{ day.afternoon }}</p>
+                    {% endif %}
+                    {% if day.evening %}
+                    <p class="day-card__time"><strong>Evening:</strong> {{ day.evening }}</p>
+                    {% endif %}
+                </div>
+                {% if day.notes %}
+                <p class="day-card__notes">{{ day.notes }}</p>
+                {% endif %}
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+
+    {% if not loop.last %}
+    <hr class="divider">
+    {% endif %}
+    {% endfor %}
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Made with <span class="footer__heart">♥</span> for our babymoon adventure</p>
+        <p>Alejandro & Alejandra · 2026</p>
+    </footer>
+</main>
